@@ -176,7 +176,7 @@
         "--metrics.prometheus=true"
       ];
       networks = [
-        traefik_proxy
+        "traefik_proxy"
       ];
     };
     #vault_warden = {

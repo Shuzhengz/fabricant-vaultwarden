@@ -179,27 +179,27 @@
         traefik_proxy
       ];
     };
-    vault_warden = {
-      autoStart=true;
-      image="vaultwarden/server:1.34.3";
-      container_name="vaultwarden";
-      environment={
-        SIGNUPS_ALLOWED: "true";
-        ADMIN_TOKEN_FILE: "/run/secrets/vaultwarden_admin_token";
-        DOMAIN: "https://vault.e4e-gateway.ucsd.edu";
-      }
-      volumes=[
-        "./vaultwarden-data:/data"
-      ];
-      networks = [
-        traefik_proxy
-      ];
-      labels={
-        "traefik.enable"= "true";
-        "traefik.http.routers.authentik_server.rule" = "Host(`https://vault.e4e-gateway.ucsd.edu`)";
-        "traefik.http.routers.authentik_server.entrypoints" = "websecure";
-        "traefik.http.routers.authentik_server.tls.certresolver" = "letsencrypt";
-      };
+    #vault_warden = {
+    #  autoStart=true;
+    #  image="vaultwarden/server:1.34.3";
+    #  container_name="vaultwarden";
+    #  environment={
+    #    SIGNUPS_ALLOWED: "true";
+    #    ADMIN_TOKEN_FILE: "/run/secrets/vaultwarden_admin_token";
+    #    DOMAIN: "https://vault.e4e-gateway.ucsd.edu";
+    #  }
+    #  volumes=[
+    #    "./vaultwarden-data:/data"
+    #  ];
+    #  networks = [
+    #    traefik_proxy
+    #  ];
+    #  labels={
+    #    "traefik.enable"= "true";
+    #    "traefik.http.routers.authentik_server.rule" = "Host(`https://vault.e4e-gateway.ucsd.edu`)";
+    #    "traefik.http.routers.authentik_server.entrypoints" = "websecure";
+    #    "traefik.http.routers.authentik_server.tls.certresolver" = "letsencrypt";
+    #  };
 
     # TODO
     #secrets:

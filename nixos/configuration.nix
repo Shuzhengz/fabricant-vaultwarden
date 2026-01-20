@@ -2,14 +2,16 @@
 # your system.  Help is available in the configuration.nix(5) man page
 # and in the NixOS manual (accessible by running ‘nixos-help’).
 
+{ config, pkgs, ... }:
+
 let
   agenixSrc = builtins.fetchTarball "https://github.com/ryantm/agenix/archive/refs/heads/main.tar.gz";
-in
 {
-  imports = [ # Include the results of the hardware scan.
-    ./hardware-configuration.nix
-    (import agenixSrc)   # ← agenix NixOS module
-  ];
+  imports =
+    [ # Include the results of the hardware scan.
+      ./hardware-configuration.nix
+      (import agenixSrc)   # ← agenix NixOS module
+    ];
 
   # Bootloader.
   boot.loader.grub.enable = true;

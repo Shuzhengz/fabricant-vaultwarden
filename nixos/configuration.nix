@@ -98,7 +98,7 @@
     git
     tmux
   #  wget
-    ryantm/agenix
+    #ryantm/agenix
   ];
 
   # Some programs need SUID wrappers, can be configured further or are

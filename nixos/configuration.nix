@@ -98,6 +98,7 @@
     git
     tmux
   #  wget
+    agenix
     #ryantm/agenix
   ];
 

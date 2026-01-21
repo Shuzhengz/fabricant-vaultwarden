@@ -91,6 +91,16 @@
     packages = with pkgs; [];
   };
 
+users.users."t.zhang.650" = {
+    isNormalUser = true;
+    description = "Tom Zhang";
+    extraGroups = [ "wheel" ];
+    openssh.authorizedKeys.keys = [
+      "ssh-ed25519 AAAAC3NzaC1lZDI1NTE5AAAAIEXgqrmbaafQ4GAqSVMXFoPsOYeVGUtXDGGY9AfkgCoQ treez.zhang@gmail.com"
+    ];
+    packages = with pkgs; [];
+  };
+
   # List packages installed in system profile. To search, run:
   # $ nix search wget
   environment.systemPackages = with pkgs; [

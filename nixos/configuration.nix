@@ -98,7 +98,6 @@ users.users."t.zhang.650" = {
     openssh.authorizedKeys.keys = [
       "ssh-ed25519 AAAAC3NzaC1lZDI1NTE5AAAAIEXgqrmbaafQ4GAqSVMXFoPsOYeVGUtXDGGY9AfkgCoQ treez.zhang@gmail.com"
     ];
-    initialHashedPassword = "<TODO>";
     packages = with pkgs; [];
   };
 
